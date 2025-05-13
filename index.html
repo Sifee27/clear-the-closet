@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%239370DB' /%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clear the Closet - LGBTQ+ Education & Advocacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      /* Fallback styles in case CSS doesn't load */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+      }
+      #root {
+        width: 100%;
+        min-height: 100vh;
+      }
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #9370DB;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading">Loading Clear the Closet...</div>
+    </div>
+    
+    <!-- Fallback content if JavaScript is disabled -->
+    <noscript>
+      <div style="padding: 20px; max-width: 800px; margin: 0 auto; text-align: center;">
+        <h1 style="color: #9370DB;">JavaScript Required</h1>
+        <p>Please enable JavaScript to view this application.</p>
+      </div>
+    </noscript>
+    
+    <!-- Load React app -->
+    <script type="module" src="./src/main.tsx"></script>
+    
+    <!-- Error handler -->
+    <script>
+      window.addEventListener('error', function(e) {
+        console.error('Application Error:', e.error);
+        document.getElementById('root').innerHTML = `
+          <div style="padding: 20px; max-width: 800px; margin: 0 auto; font-family: sans-serif;">
+            <h1 style="color: #9370DB;">Error Loading Application</h1>
+            <p>There was a problem loading the application. Please check the console for details.</p>
+            <pre style="background: #f1f1f1; padding: 10px; border-radius: 4px; overflow: auto;">${e.message}</pre>
+          </div>
+        `;
+      });
+    </script>
+  </body>
+</html> 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Test - Clear the Closet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    #root {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #9370DB;
+      font-size: 18px;
+    }
+    button {
+      background-color: #40B5AD;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #9370DB;
+    }
+    h1 {
+      color: #9370DB;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="loading">Loading React...</div>
+  </div>
+
+  <!-- Load React from CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- React Component -->
+  <script type="text/babel">
+    // Simple React component
+    function App() {
+      const [count, setCount] = React.useState(0);
+      
+      return (
+        <div>
+          <h1>React is Working!</h1>
+          <p>This is a simple React component loaded from CDN.</p>
+          <p>Count: {count}</p>
+          <button onClick={() => setCount(count + 1)}>
+            Increment
+          </button>
+          <hr />
+          <p>
+            If you can see this and the button works, then React is functioning correctly.
+            The issue with your application is likely related to:
+          </p>
+          <ul>
+            <li>Node.js version (needs to be 20.x+)</li>
+            <li>Vite configuration</li>
+            <li>Missing or incompatible dependencies</li>
+          </ul>
+          <p>
+            <strong>Next steps:</strong> Follow the instructions in TROUBLESHOOTING.md
+          </p>
+        </div>
+      );
+    }
+    
+    // Render the App component
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html> 
