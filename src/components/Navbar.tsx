@@ -53,6 +53,7 @@ export const Navbar = () => {
           <NavLink to="/civics">Queer Civics 101</NavLink>
           <NavLink to="/voices">Voices & Victories</NavLink>
           <NavLink to="/action">Take Action</NavLink>
+          <NavLink to="/about">About Us</NavLink>
         </HStack>
 
         <IconButton
@@ -80,6 +81,7 @@ export const Navbar = () => {
         <NavLink to="/civics">Queer Civics 101</NavLink>
         <NavLink to="/voices">Voices & Victories</NavLink>
         <NavLink to="/action">Take Action</NavLink>
+        <NavLink to="/about">About Us</NavLink>
       </VStack>
     </Box>
   );

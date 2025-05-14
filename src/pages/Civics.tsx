@@ -9,38 +9,40 @@ import {
   Stack,
   useColorModeValue,
   Link,
+  Alert,
+  AlertIcon,
 } from '@chakra-ui/react';
 import { FaDownload, FaFilePdf, FaImage } from 'react-icons/fa';
 
-// Dummy data - replace with real content later
-const resources = [
+// Example resources - Replace with actual educational materials
+const resourceExamples = [
   {
     id: 1,
-    title: "Know Your Rights Zine",
-    description: "A comprehensive guide to LGBTQ+ legal rights and protections.",
-    type: "PDF",
+    title: "[Resource Title 1]",
+    description: "[Brief description of this educational resource and its purpose - 1-2 sentences]",
+    type: "[File Type]",
     icon: FaFilePdf,
-    downloadUrl: "#",
+    downloadUrl: "#", // Replace with actual download link
   },
   {
     id: 2,
-    title: "Trans Healthcare Guide",
-    description: "Understanding healthcare rights and accessing affirming care.",
-    type: "PDF",
+    title: "[Resource Title 2]",
+    description: "[Brief description of this educational resource and its purpose - 1-2 sentences]",
+    type: "[File Type]",
     icon: FaFilePdf,
-    downloadUrl: "#",
+    downloadUrl: "#", // Replace with actual download link
   },
   {
     id: 3,
-    title: "School Policy Infographic",
-    description: "Visual guide to LGBTQ+ inclusive school policies.",
-    type: "Image",
+    title: "[Resource Title 3]",
+    description: "[Brief description of this educational resource and its purpose - 1-2 sentences]",
+    type: "[File Type]",
     icon: FaImage,
-    downloadUrl: "#",
+    downloadUrl: "#", // Replace with actual download link
   },
 ];
 
-const ResourceCard = ({ resource }: { resource: typeof resources[0] }) => {
+const ResourceCard = ({ resource }: { resource: typeof resourceExamples[0] }) => {
   const cardBg = useColorModeValue('white', 'gray.800');
   
   return (
@@ -83,6 +85,11 @@ export const Civics = () => {
   return (
     <Box py={8}>
       <Container maxW="container.xl">
+        <Alert status="info" mb={8}>
+          <AlertIcon />
+          <Text>Replace all placeholder content with actual educational resources about LGBTQ+ civics, rights, and advocacy.</Text>
+        </Alert>
+        
         <Stack spacing={12}>
           {/* Header */}
           <Box textAlign="center">
@@ -93,21 +100,20 @@ export const Civics = () => {
               bgGradient="linear(to-r, brand.purple, brand.teal)"
               bgClip="text"
             >
-              Queer Civics 101
+              [Educational Resources Page Title]
             </Heading>
             <Text fontSize="xl" color="gray.600" maxW="2xl" mx="auto">
-              Essential resources and guides to help you understand and advocate for LGBTQ+ rights
-              in your community.
+              [Brief description of this page's purpose - what educational resources are provided and who they're for]
             </Text>
           </Box>
 
           {/* Featured Resources */}
           <Box>
             <Heading size="lg" mb={6}>
-              Featured Resources
+              [Resources Section Title]
             </Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-              {resources.map(resource => (
+              {resourceExamples.map(resource => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
             </SimpleGrid>
@@ -116,16 +122,16 @@ export const Civics = () => {
           {/* Interactive Learning Section */}
           <Box bg="brand.lavender" p={8} rounded="lg">
             <Stack spacing={4}>
-              <Heading size="lg">Interactive Learning</Heading>
+              <Heading size="lg">[Interactive Section Title]</Heading>
               <Text fontSize="lg">
-                Explore our interactive modules to learn about civic engagement and LGBTQ+ advocacy.
+                [Description of what interactive learning resources are available and what users will gain from them]
               </Text>
               <Button
                 colorScheme="purple"
                 size="lg"
                 width={{ base: "full", md: "auto" }}
               >
-                Start Learning
+                [Interactive Button Text]
               </Button>
             </Stack>
           </Box>
@@ -133,26 +139,23 @@ export const Civics = () => {
           {/* Community Guidelines */}
           <Box>
             <Heading size="lg" mb={6}>
-              Community Guidelines
+              [Guidelines Section Title]
             </Heading>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
               <Box>
                 <Heading size="md" mb={4}>
-                  How to Use These Resources
+                  [Usage Guidelines Title]
                 </Heading>
                 <Text color="gray.600">
-                  Our resources are designed to be accessible and informative. Download, share,
-                  and use them to educate others in your community. All materials are free for
-                  personal and educational use.
+                  [Explanation of how these resources should be used, any usage restrictions, and attribution requirements if applicable]
                 </Text>
               </Box>
               <Box>
                 <Heading size="md" mb={4}>
-                  Contribute
+                  [Contribution Guidelines Title]
                 </Heading>
                 <Text color="gray.600">
-                  Are you an educator or activist? We welcome contributions to our resource
-                  library. Contact us to learn more about submitting your materials for review.
+                  [Information about how others can contribute to these resources, submission process, and content standards]
                 </Text>
               </Box>
             </SimpleGrid>

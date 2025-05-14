@@ -11,44 +11,46 @@ import {
   LinkBox,
   LinkOverlay,
   Flex,
+  Alert,
+  AlertIcon,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 
-// Dummy data - replace with real content later
-const stories = [
+// Example stories - Replace with actual stories and testimonials
+const storyExamples = [
   {
     id: 1,
-    title: "Finding My Voice in Advocacy",
-    author: "Alex Chen",
-    authorRole: "Student Activist",
-    summary: "How I turned my personal journey into a movement for change in my community.",
-    image: "https://via.placeholder.com/150",
-    category: "Personal Story",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "[Story Title 1]",
+    author: "[Person's Name]",
+    authorRole: "[Role/Position]",
+    summary: "[Brief summary of their story or contribution to the LGBTQ+ community - 1-2 sentences]",
+    image: "https://via.placeholder.com/150?text=Person",
+    category: "[Story Category]",
+    videoUrl: "#", // Replace with actual video embed URL
   },
   {
     id: 2,
-    title: "Breaking Barriers in Politics",
-    author: "Sarah Martinez",
-    authorRole: "State Representative",
-    summary: "My path to becoming one of the first openly trans legislators in my state.",
-    image: "https://via.placeholder.com/150",
-    category: "Interview",
-    audioUrl: "https://example.com/audio.mp3",
+    title: "[Story Title 2]",
+    author: "[Person's Name]",
+    authorRole: "[Role/Position]",
+    summary: "[Brief summary of their story or contribution to the LGBTQ+ community - 1-2 sentences]",
+    image: "https://via.placeholder.com/150?text=Person",
+    category: "[Story Category]",
+    audioUrl: "#", // Replace with actual audio URL
   },
   {
     id: 3,
-    title: "Creating Safe Spaces in Education",
-    author: "Dr. James Wilson",
-    authorRole: "Education Advocate",
-    summary: "Working with schools to develop inclusive policies and support systems.",
-    image: "https://via.placeholder.com/150",
-    category: "Interview",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "[Story Title 3]",
+    author: "[Person's Name]",
+    authorRole: "[Role/Position]",
+    summary: "[Brief summary of their story or contribution to the LGBTQ+ community - 1-2 sentences]",
+    image: "https://via.placeholder.com/150?text=Person",
+    category: "[Story Category]",
+    videoUrl: "#", // Replace with actual video embed URL
   },
 ];
 
-const StoryCard = ({ story }: { story: typeof stories[0] }) => (
+const StoryCard = ({ story }: { story: typeof storyExamples[0] }) => (
   <LinkBox
     as="article"
     bg="white"
@@ -59,7 +61,7 @@ const StoryCard = ({ story }: { story: typeof stories[0] }) => (
     _hover={{ transform: "translateY(-4px)", shadow: "lg" }}
   >
     <Stack spacing={4}>
-      {story.videoUrl && (
+      {story.videoUrl && story.videoUrl !== "#" && (
         <AspectRatio ratio={16 / 9} mb={4}>
           <iframe
             title={story.title}
@@ -68,6 +70,12 @@ const StoryCard = ({ story }: { story: typeof stories[0] }) => (
             style={{ borderRadius: '0.5rem' }}
           />
         </AspectRatio>
+      )}
+      
+      {story.videoUrl === "#" && (
+        <Box bg="gray.100" borderRadius="md" p={4} textAlign="center" mb={4}>
+          <Text fontSize="sm" color="gray.500">Video placeholder - add actual video URL</Text>
+        </Box>
       )}
       
       <Tag size="sm" colorScheme="purple" alignSelf="flex-start">
@@ -103,6 +111,11 @@ export const Voices = () => {
   return (
     <Box py={8}>
       <Container maxW="container.xl">
+        <Alert status="info" mb={8}>
+          <AlertIcon />
+          <Text>Replace all placeholder content with actual stories, interviews, and testimonials from LGBTQ+ community members and allies.</Text>
+        </Alert>
+        
         <Stack spacing={12}>
           {/* Header */}
           <Box textAlign="center">
@@ -113,11 +126,10 @@ export const Voices = () => {
               bgGradient="linear(to-r, brand.purple, brand.teal)"
               bgClip="text"
             >
-              Voices & Victories
+              [Stories Page Title]
             </Heading>
             <Text fontSize="xl" color="gray.600" maxW="2xl" mx="auto">
-              Amplifying the stories of LGBTQ+ activists, lawmakers, and community leaders
-              making a difference.
+              [Brief description of this section's purpose - whose voices are featured and why they matter]
             </Text>
           </Box>
 
@@ -126,36 +138,28 @@ export const Voices = () => {
             <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} alignItems="center">
               <Box>
                 <Heading size="lg" mb={4}>
-                  Featured Story
+                  [Featured Story Title]
                 </Heading>
                 <Text fontSize="xl" mb={6}>
-                  "Breaking Barriers in Politics" - An intimate conversation with Sarah Martinez
-                  about her groundbreaking journey in state politics.
+                  [Brief description of the featured story and why it's highlighted - 1-2 sentences]
                 </Text>
-                <AspectRatio ratio={16 / 9}>
-                  <iframe
-                    title="Featured Story"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    allowFullScreen
-                    style={{ borderRadius: '0.5rem' }}
-                  />
-                </AspectRatio>
+                <Box bg="gray.200" borderRadius="md" height="250px" display="flex" alignItems="center" justifyContent="center">
+                  <Text>[Featured video or content will appear here]</Text>
+                </Box>
               </Box>
               <Box>
                 <Text fontSize="lg" color="gray.700">
-                  "I never saw someone like me in politics growing up. Now, I get to be that
-                  representation for the next generation. It's not just about being in office —
-                  it's about showing young queer people that they belong in every space."
+                  "[Add a powerful quote from the featured person that captures the essence of their story or message]"
                 </Text>
                 <Flex align="center" mt={6}>
                   <Avatar
-                    src="https://via.placeholder.com/150"
-                    name="Sarah Martinez"
+                    src="https://via.placeholder.com/150?text=Featured"
+                    name="[Featured Person's Name]"
                     size="lg"
                   />
                   <Box ml={4}>
-                    <Text fontWeight="bold">Sarah Martinez</Text>
-                    <Text color="gray.600">State Representative</Text>
+                    <Text fontWeight="bold">[Featured Person's Name]</Text>
+                    <Text color="gray.600">[Featured Person's Role]</Text>
                   </Box>
                 </Flex>
               </Box>
@@ -165,10 +169,10 @@ export const Voices = () => {
           {/* Stories Grid */}
           <Box>
             <Heading size="lg" mb={6}>
-              Recent Stories
+              [Stories Section Title]
             </Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-              {stories.map(story => (
+              {storyExamples.map(story => (
                 <StoryCard key={story.id} story={story} />
               ))}
             </SimpleGrid>
@@ -177,10 +181,10 @@ export const Voices = () => {
           {/* Submit Story CTA */}
           <Box textAlign="center" bg="brand.pink" p={8} rounded="lg">
             <Heading size="lg" mb={4}>
-              Share Your Story
+              [Call to Action Title]
             </Heading>
             <Text fontSize="lg" mb={4}>
-              Are you making waves in your community? We want to hear from you!
+              [Invitation for users to share their own stories - 1-2 sentences explaining what you're looking for]
             </Text>
             <LinkBox
               as={RouterLink}
@@ -194,7 +198,7 @@ export const Voices = () => {
               fontWeight="bold"
               _hover={{ bg: 'brand.teal' }}
             >
-              Submit Your Story
+              [Submit Button Text]
             </LinkBox>
           </Box>
         </Stack>

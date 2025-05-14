@@ -55,6 +55,7 @@ export const Footer = () => {
           <Stack spacing={4}>
             <Text fontSize="lg" fontWeight="bold">Quick Links</Text>
             <Link as={RouterLink} to="/">Home</Link>
+            <Link as={RouterLink} to="/about">About Us</Link>
             <Link as={RouterLink} to="/legislation">Legislation</Link>
             <Link as={RouterLink} to="/civics">Queer Civics 101</Link>
             <Link as={RouterLink} to="/voices">Voices & Victories</Link>

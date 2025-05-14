@@ -6,6 +6,7 @@ import { Legislation } from './pages/Legislation';
 import { Civics } from './pages/Civics';
 import { Voices } from './pages/Voices';
 import { Action } from './pages/Action';
+import { About } from './pages/About';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/legislation" element={<Legislation />} />
         <Route path="/civics" element={<Civics />} />
         <Route path="/voices" element={<Voices />} />

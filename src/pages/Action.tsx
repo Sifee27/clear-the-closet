@@ -14,11 +14,13 @@ import {
   ListItem,
   ListIcon,
   Link,
+  Alert,
+  AlertIcon,
 } from '@chakra-ui/react';
 import { FaCheckCircle, FaExternalLinkAlt, FaCopy, FaEnvelope } from 'react-icons/fa';
 import { useState } from 'react';
 
-// Dummy data - replace with real content later
+// Email template placeholder - Replace with your own template
 const emailTemplate = `Dear [Representative's Name],
 
 I am writing to express my concern about [Bill Number/Name] and its potential impact on the LGBTQ+ community. As your constituent, I urge you to [support/oppose] this legislation because...
@@ -31,27 +33,28 @@ Sincerely,
 [Your Name]
 [Your Address]`;
 
+// Campaign examples - Replace with current actionable campaigns
 const currentCampaigns = [
   {
     id: 1,
-    title: "Support the Equality Act",
-    description: "Call your representatives to support comprehensive LGBTQ+ protections.",
-    action: "Call Congress",
-    link: "https://www.congress.gov/bill/117th-congress/house-bill/5",
+    title: "[Campaign 1 Title]",
+    description: "[Brief description of the campaign, its goal, and why it matters]",
+    action: "[Call to Action Button]",
+    link: "#", // Replace with actual campaign URL
   },
   {
     id: 2,
-    title: "Protect Trans Youth",
-    description: "Sign the petition to oppose discriminatory school policies.",
-    action: "Sign Petition",
-    link: "https://www.aclu.org/issues/lgbtq-rights/transgender-rights",
+    title: "[Campaign 2 Title]",
+    description: "[Brief description of the campaign, its goal, and why it matters]",
+    action: "[Call to Action Button]",
+    link: "#", // Replace with actual campaign URL
   },
   {
     id: 3,
-    title: "Healthcare Access Campaign",
-    description: "Join the campaign for inclusive healthcare policies.",
-    action: "Join Campaign",
-    link: "https://www.hrc.org/resources/healthcare",
+    title: "[Campaign 3 Title]",
+    description: "[Brief description of the campaign, its goal, and why it matters]",
+    action: "[Call to Action Button]",
+    link: "#", // Replace with actual campaign URL
   },
 ];
 
@@ -115,6 +118,11 @@ export const Action = () => {
   return (
     <Box py={8}>
       <Container maxW="container.xl">
+        <Alert status="info" mb={8}>
+          <AlertIcon />
+          <Text>Replace all placeholder content on this page with actual campaigns, resources, and advocacy tools relevant to your mission.</Text>
+        </Alert>
+        
         <Stack spacing={12}>
           {/* Header */}
           <Box textAlign="center">
@@ -125,17 +133,17 @@ export const Action = () => {
               bgGradient="linear(to-r, brand.purple, brand.teal)"
               bgClip="text"
             >
-              Take Action Now
+              [Action Page Title]
             </Heading>
             <Text fontSize="xl" color="gray.600" maxW="2xl" mx="auto">
-              Your voice matters. Join us in advocating for LGBTQ+ rights and creating positive change.
+              [Brief description of why taking action is important and what users can do on this page - 1-2 sentences]
             </Text>
           </Box>
 
           {/* Current Campaigns */}
           <Box>
             <Heading size="lg" mb={6}>
-              Current Campaigns
+              [Campaigns Section Title]
             </Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
               {currentCampaigns.map(campaign => (
@@ -147,10 +155,9 @@ export const Action = () => {
           {/* Email Template */}
           <Box bg="brand.lavender" p={8} rounded="lg">
             <Stack spacing={6}>
-              <Heading size="lg">Email Template</Heading>
+              <Heading size="lg">[Email Template Section Title]</Heading>
               <Text>
-                Use this template to contact your representatives about LGBTQ+ issues.
-                Customize it with your personal story and details.
+                [Instructions for using the email template - explain what it's for and how to customize it]
               </Text>
               <Textarea
                 value={email}
@@ -172,28 +179,28 @@ export const Action = () => {
           {/* How to Be Effective */}
           <Box>
             <Heading size="lg" mb={6}>
-              How to Be an Effective Advocate
+              [Advocacy Tips Section Title]
             </Heading>
             <List spacing={4}>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="brand.teal" />
-                <Text display="inline" fontWeight="bold">Be Personal:</Text>
-                {" Share your story and connection to the issue."}
+                <Text display="inline" fontWeight="bold">[Tip 1 Title]:</Text>
+                {" [Brief description of the first advocacy tip]"}
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="brand.teal" />
-                <Text display="inline" fontWeight="bold">Be Specific:</Text>
-                {" Reference bill numbers and specific policies."}
+                <Text display="inline" fontWeight="bold">[Tip 2 Title]:</Text>
+                {" [Brief description of the second advocacy tip]"}
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="brand.teal" />
-                <Text display="inline" fontWeight="bold">Be Professional:</Text>
-                {" Keep communication respectful and focused."}
+                <Text display="inline" fontWeight="bold">[Tip 3 Title]:</Text>
+                {" [Brief description of the third advocacy tip]"}
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="brand.teal" />
-                <Text display="inline" fontWeight="bold">Follow Up:</Text>
-                {" Track responses and maintain communication."}
+                <Text display="inline" fontWeight="bold">[Tip 4 Title]:</Text>
+                {" [Brief description of the fourth advocacy tip]"}
               </ListItem>
             </List>
           </Box>
@@ -201,9 +208,9 @@ export const Action = () => {
           {/* Newsletter Signup */}
           <Box textAlign="center" bg="brand.pink" p={8} rounded="lg">
             <Stack spacing={4}>
-              <Heading size="lg">Stay Updated</Heading>
+              <Heading size="lg">[Newsletter Section Title]</Heading>
               <Text fontSize="lg">
-                Get weekly action alerts and updates on LGBTQ+ legislation.
+                [Brief description of what subscribers will receive and how often]
               </Text>
               <Button
                 leftIcon={<FaEnvelope />}
@@ -213,7 +220,7 @@ export const Action = () => {
                 alignSelf="center"
                 onClick={handleSubscribe}
               >
-                Subscribe to Action Alerts
+                [Subscribe Button Text]
               </Button>
             </Stack>
           </Box>

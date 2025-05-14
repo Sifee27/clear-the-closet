@@ -1,4 +1,4 @@
-import { Box, Button, Container, Heading, Text, SimpleGrid, Image, Stack, Icon, Flex } from '@chakra-ui/react';
+import { Box, Button, Container, Heading, Text, SimpleGrid, Image, Stack, Icon, Flex, Alert, AlertIcon } from '@chakra-ui/react';
 import { FaBook, FaHandsHelping, FaMicrophone } from 'react-icons/fa';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -25,11 +25,10 @@ export const Home = () => {
                 bgGradient="linear(to-r, brand.purple, brand.teal)"
                 bgClip="text"
               >
-                Unpacking queer policy. Empowering the next generation.
+                [Add Your Tagline Here]
               </Heading>
               <Text fontSize="xl" color="gray.600" mb={6}>
-                Clear the Closet is your trusted resource for understanding LGBTQ+ legislation
-                and taking meaningful action for equality.
+                [Add a brief 2-3 sentence description of your organization's purpose, target audience, and what users can gain from your site]
               </Text>
               <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
                 <Button
@@ -40,7 +39,7 @@ export const Home = () => {
                   _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                   transition="all 0.2s"
                 >
-                  Explore Legislation
+                  [Primary CTA]
                 </Button>
                 <Button
                   as={RouterLink}
@@ -51,14 +50,18 @@ export const Home = () => {
                   _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                   transition="all 0.2s"
                 >
-                  Take Action
+                  [Secondary CTA]
                 </Button>
               </Stack>
             </Box>
-            <Flex flex={1} justify="center">
+            <Flex flex={1} justify="center" position="relative">
+              <Alert status="info" position="absolute" top="0" zIndex="1" width="100%">
+                <AlertIcon />
+                Replace with hero image that represents your mission
+              </Alert>
               <Image
-                src="hero-illustration.svg"
-                alt="Diverse group of people standing together"
+                src="https://via.placeholder.com/800x600?text=Hero+Image"
+                alt="Hero image representing your mission"
                 maxH="400px"
                 borderRadius="lg"
                 shadow="md"
@@ -71,23 +74,23 @@ export const Home = () => {
       {/* Features Section */}
       <Container maxW="container.xl" py={16}>
         <Heading textAlign="center" mb={12} size="xl">
-          How We Make a Difference
+          [Add Section Title Here]
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
           <FeatureCard
             icon={FaBook}
-            title="Learn"
-            description="Understand current legislation and policies affecting the LGBTQ+ community."
+            title="[Feature 1 Title]"
+            description="[Brief description of Feature 1 - what users can learn/gain from this aspect of your organization]"
           />
           <FeatureCard
             icon={FaMicrophone}
-            title="Share"
-            description="Amplify queer voices and stories of triumph in our community."
+            title="[Feature 2 Title]"
+            description="[Brief description of Feature 2 - what users can learn/gain from this aspect of your organization]"
           />
           <FeatureCard
             icon={FaHandsHelping}
-            title="Act"
-            description="Get involved with actionable steps to support LGBTQ+ rights."
+            title="[Feature 3 Title]"
+            description="[Brief description of Feature 3 - what users can learn/gain from this aspect of your organization]"
           />
         </SimpleGrid>
       </Container>
@@ -95,9 +98,9 @@ export const Home = () => {
       {/* CTA Section */}
       <Box bg="brand.pink" py={16}>
         <Container maxW="container.xl" textAlign="center">
-          <Heading mb={4}>Ready to make a difference?</Heading>
+          <Heading mb={4}>[Call to Action Heading]</Heading>
           <Text fontSize="xl" mb={8}>
-            Join our community of advocates and stay updated on the latest developments.
+            [1-2 sentence compelling reason to take action, subscribe, or get involved]
           </Text>
           <Button
             as={RouterLink}
@@ -108,7 +111,7 @@ export const Home = () => {
             _hover={{ transform: 'scale(1.05)', boxShadow: 'lg' }}
             transition="all 0.2s"
           >
-            Get Started
+            [CTA Button Text]
           </Button>
         </Container>
       </Box>

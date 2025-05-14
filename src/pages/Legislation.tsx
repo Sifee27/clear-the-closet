@@ -12,44 +12,47 @@ import {
   Image,
   LinkBox,
   LinkOverlay,
+  Alert,
+  AlertIcon,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 
-// Dummy data - replace with real content later
-const dummyPosts = [
+// Example legislation articles - Replace with real content
+const exampleArticles = [
   {
     id: 1,
-    title: "Understanding the Equality Act",
-    summary: "A comprehensive guide to the landmark legislation and its implications for LGBTQ+ rights.",
-    category: "Federal Legislation",
-    image: "https://via.placeholder.com/300x200",
-    date: "2024-03-15",
+    title: "[Legislation Article Title 1]",
+    summary: "[Brief summary of the legislation, its impact, and why it matters to the LGBTQ+ community - 1-2 sentences]",
+    category: "[Category 1]",
+    image: "https://via.placeholder.com/300x200?text=Legislation+Image",
+    date: "2024-01-01",
   },
   {
     id: 2,
-    title: "State-by-State Trans Healthcare Laws",
-    summary: "An overview of current transgender healthcare policies across different states.",
-    category: "Healthcare",
-    image: "https://via.placeholder.com/300x200",
-    date: "2024-03-10",
+    title: "[Legislation Article Title 2]",
+    summary: "[Brief summary of the legislation, its impact, and why it matters to the LGBTQ+ community - 1-2 sentences]",
+    category: "[Category 2]",
+    image: "https://via.placeholder.com/300x200?text=Legislation+Image",
+    date: "2024-01-02",
   },
   {
     id: 3,
-    title: "Global LGBTQ+ Rights Report",
-    summary: "Analysis of international policies and their impact on queer communities worldwide.",
-    category: "International",
-    image: "https://via.placeholder.com/300x200",
-    date: "2024-03-05",
+    title: "[Legislation Article Title 3]",
+    summary: "[Brief summary of the legislation, its impact, and why it matters to the LGBTQ+ community - 1-2 sentences]",
+    category: "[Category 3]",
+    image: "https://via.placeholder.com/300x200?text=Legislation+Image",
+    date: "2024-01-03",
   },
 ];
 
-const categories = ["All", "Federal Legislation", "Healthcare", "Education", "International"];
+// Customize these categories to match your content structure
+const categories = ["All", "[Category 1]", "[Category 2]", "[Category 3]", "[Category 4]"];
 
 export const Legislation = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredPosts = dummyPosts.filter(post => {
+  const filteredPosts = exampleArticles.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          post.summary.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
@@ -59,6 +62,11 @@ export const Legislation = () => {
   return (
     <Box py={8}>
       <Container maxW="container.xl">
+        <Alert status="info" mb={8}>
+          <AlertIcon />
+          <Text>Replace the placeholder articles with actual legislation explainers. Create categories that match your content strategy.</Text>
+        </Alert>
+        
         <Stack spacing={8}>
           {/* Header */}
           <Box textAlign="center">
@@ -69,17 +77,17 @@ export const Legislation = () => {
               bgGradient="linear(to-r, brand.purple, brand.teal)"
               bgClip="text"
             >
-              LGBTQ+ Legislation Explainers
+              [Legislation Page Title]
             </Heading>
             <Text fontSize="xl" color="gray.600">
-              Stay informed about policies affecting the queer community
+              [Brief description of this section's purpose - what will users learn here?]
             </Text>
           </Box>
 
           {/* Filters */}
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Input
-              placeholder="Search articles..."
+              placeholder="[Search placeholder text]"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               flex={1}
