@@ -18,7 +18,7 @@ Clear the Closet is a web application focused on LGBTQ+ education, advocacy, and
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/clear-the-closet.git
+git clone https://github.com/sifee27/clear-the-closet.git
 cd clear-the-closet
 ```
 
