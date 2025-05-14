@@ -106,4 +106,4 @@ src/
 
 ## Contact
 
-For questions or feedback, please open an issue or contact us at [your-email@example.com]. 
+For questions or feedback, please open an issue or contact us!
