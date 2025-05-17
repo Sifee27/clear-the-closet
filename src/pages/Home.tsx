@@ -1,12 +1,57 @@
 import { Box, Button, Container, Heading, Text, SimpleGrid, Image, Stack, Icon, Flex, Alert, AlertIcon } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
 import { FaBook, FaHandsHelping, FaMicrophone } from 'react-icons/fa';
 import { Link as RouterLink } from 'react-router-dom';
 
+const fadeInUp = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
 const FeatureCard = ({ icon, title, description }: { icon: any; title: string; description: string }) => (
-  <Box p={6} bg="white" rounded="lg" shadow="md" textAlign="center" transition="transform 0.3s" _hover={{ transform: 'translateY(-5px)' }}>
-    <Icon as={icon} w={10} h={10} color="brand.purple" mb={4} />
-    <Heading size="md" mb={2}>{title}</Heading>
-    <Text color="gray.600">{description}</Text>
+  <Box
+    p={6}
+    rounded="lg"
+    shadow="md"
+    textAlign="center"
+    transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    _hover={{
+      transform: 'translateY(-8px)',
+      shadow: 'xl',
+    }}
+    animation={`${fadeInUp} 0.5s ease-out`}
+  >
+    <Icon
+      as={icon}
+      w={10}
+      h={10}
+      color="brand.purple"
+      mb={4}
+      transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      _groupHover={{
+        transform: 'scale(1.1)',
+        color: 'brand.teal',
+      }}
+    />
+    <Heading
+      size="md"
+      mb={2}
+      transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      _groupHover={{
+        color: 'brand.purple',
+      }}
+    >
+      {title}
+    </Heading>
+    <Text
+      color="gray.600"
+      transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      _groupHover={{
+        color: 'gray.700',
+      }}
+    >
+      {description}
+    </Text>
   </Box>
 );
 
@@ -25,10 +70,12 @@ export const Home = () => {
                 bgGradient="linear(to-r, brand.purple, brand.teal)"
                 bgClip="text"
               >
-                [Add Your Tagline Here]
+                Queer Stories. Clear Futures
+
+
               </Heading>
               <Text fontSize="xl" color="gray.600" mb={6}>
-                [Add a brief 2-3 sentence description of your organization's purpose, target audience, and what users can gain from your site]
+                Clear the Closet is a youth-led nonprofit dedicated to amplifying queer voices through storytelling, education, and community support. We aim to empower LGBTQ+ youth and allies by providing access to inclusive resources, zines, and personal narratives. Visitors can explore, share, and connect through uplifting content that centers identity, expression, and liberation. 
               </Text>
               <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
                 <Button
@@ -39,7 +86,9 @@ export const Home = () => {
                   _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                   transition="all 0.2s"
                 >
-                  [Primary CTA]
+                  Explore Queer Legislation
+
+
                 </Button>
                 <Button
                   as={RouterLink}
@@ -50,21 +99,19 @@ export const Home = () => {
                   _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                   transition="all 0.2s"
                 >
-                  [Secondary CTA]
+                  Make Your Voice Heard
                 </Button>
               </Stack>
             </Box>
             <Flex flex={1} justify="center" position="relative">
-              <Alert status="info" position="absolute" top="0" zIndex="1" width="100%">
-                <AlertIcon />
-                Replace with hero image that represents your mission
-              </Alert>
               <Image
-                src="https://via.placeholder.com/800x600?text=Hero+Image"
-                alt="Hero image representing your mission"
-                maxH="400px"
+                src="/images/hero-image.jpg"
+                alt="Diverse group of LGBTQ+ youth and allies celebrating pride"
+                maxH="500px"
                 borderRadius="lg"
-                shadow="md"
+                shadow="xl"
+                objectFit="cover"
+                fallbackSrc="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
               />
             </Flex>
           </Stack>
@@ -74,23 +121,23 @@ export const Home = () => {
       {/* Features Section */}
       <Container maxW="container.xl" py={16}>
         <Heading textAlign="center" mb={12} size="xl">
-          [Add Section Title Here]
+          What We Offer
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
           <FeatureCard
             icon={FaBook}
-            title="[Feature 1 Title]"
-            description="[Brief description of Feature 1 - what users can learn/gain from this aspect of your organization]"
+            title="Educational Resources"
+            description="Access our comprehensive library of LGBTQ+ history, rights, and current legislation. Stay informed with up-to-date information about queer rights and advocacy."
           />
           <FeatureCard
             icon={FaMicrophone}
-            title="[Feature 2 Title]"
-            description="[Brief description of Feature 2 - what users can learn/gain from this aspect of your organization]"
+            title="Share Your Story"
+            description="Join our community of storytellers. Share your experiences, connect with others, and help create a more inclusive world through personal narratives."
           />
           <FeatureCard
             icon={FaHandsHelping}
-            title="[Feature 3 Title]"
-            description="[Brief description of Feature 3 - what users can learn/gain from this aspect of your organization]"
+            title="Community Support"
+            description="Find resources, support groups, and opportunities to get involved in local LGBTQ+ initiatives. Together, we can create lasting change."
           />
         </SimpleGrid>
       </Container>
@@ -98,9 +145,9 @@ export const Home = () => {
       {/* CTA Section */}
       <Box bg="brand.pink" py={16}>
         <Container maxW="container.xl" textAlign="center">
-          <Heading mb={4}>[Call to Action Heading]</Heading>
+          <Heading mb={4}>Be the Voice for Change</Heading>
           <Text fontSize="xl" mb={8}>
-            [1-2 sentence compelling reason to take action, subscribe, or get involved]
+          Your voice matters — and collective action can shift culture and policy. Join us to uplift queer stories, fight harmful legislation, and build a future where everyone can live freely and authentically.
           </Text>
           <Button
             as={RouterLink}
@@ -111,7 +158,7 @@ export const Home = () => {
             _hover={{ transform: 'scale(1.05)', boxShadow: 'lg' }}
             transition="all 0.2s"
           >
-            [CTA Button Text]
+            Get Involved
           </Button>
         </Container>
       </Box>

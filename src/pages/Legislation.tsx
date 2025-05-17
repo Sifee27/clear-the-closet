@@ -77,7 +77,7 @@ export const Legislation = () => {
               bgGradient="linear(to-r, brand.purple, brand.teal)"
               bgClip="text"
             >
-              [Legislation Page Title]
+              Legislation
             </Heading>
             <Text fontSize="xl" color="gray.600">
               [Brief description of this section's purpose - what will users learn here?]
@@ -87,7 +87,7 @@ export const Legislation = () => {
           {/* Filters */}
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Input
-              placeholder="[Search placeholder text]"
+              placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               flex={1}

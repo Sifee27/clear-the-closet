@@ -1,0 +1,23 @@
+{
+  "name": "Clear the Closet",
+  "short_name": "Clear Closet",
+  "description": "A youth-led nonprofit dedicated to amplifying queer voices through storytelling, education, and community support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#9370DB",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+} 

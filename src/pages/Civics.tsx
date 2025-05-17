@@ -100,7 +100,7 @@ export const Civics = () => {
               bgGradient="linear(to-r, brand.purple, brand.teal)"
               bgClip="text"
             >
-              [Educational Resources Page Title]
+              Educate Yourself
             </Heading>
             <Text fontSize="xl" color="gray.600" maxW="2xl" mx="auto">
               [Brief description of this page's purpose - what educational resources are provided and who they're for]

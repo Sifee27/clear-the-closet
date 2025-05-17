@@ -4,14 +4,61 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%239370DB' /%3E%3C/svg%3E" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Clear the Closet is a youth-led nonprofit dedicated to amplifying queer voices through storytelling, education, and community support. Join us in creating a more inclusive future." />
+    <meta name="keywords" content="LGBTQ+, queer rights, youth advocacy, education, community support, storytelling" />
+    <meta name="author" content="Clear the Closet" />
+    <meta name="theme-color" content="#9370DB" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Clear the Closet - LGBTQ+ Education & Advocacy" />
+    <meta property="og:description" content="Amplifying queer voices through storytelling, education, and community support." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://clearthecloset.org" />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clear the Closet - LGBTQ+ Education & Advocacy" />
+    <meta name="twitter:description" content="Amplifying queer voices through storytelling, education, and community support." />
+    <meta name="twitter:image" content="/images/og-image.jpg" />
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Clear the Closet" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    
     <title>Clear the Closet - LGBTQ+ Education & Advocacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NonprofitOrganization",
+      "name": "Clear the Closet",
+      "url": "https://clearthecloset.org",
+      "logo": "https://clearthecloset.org/images/logo.png",
+      "description": "A youth-led nonprofit dedicated to amplifying queer voices through storytelling, education, and community support.",
+      "sameAs": [
+        "https://twitter.com/clearthecloset",
+        "https://instagram.com/clearthecloset",
+        "https://facebook.com/clearthecloset"
+      ]
+    }
+    </script>
+    
     <style>
       /* Fallback styles in case CSS doesn't load */
       body {
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        color: #2D3748;
       }
       #root {
         width: 100%;
@@ -25,6 +72,7 @@
         color: #9370DB;
         font-family: 'Montserrat', sans-serif;
         font-size: 24px;
+        background: linear-gradient(135deg, #f5f3ff 0%, #e6e6fa 100%);
       }
     </style>
   </head>
@@ -38,11 +86,27 @@
       <div style="padding: 20px; max-width: 800px; margin: 0 auto; text-align: center;">
         <h1 style="color: #9370DB;">JavaScript Required</h1>
         <p>Please enable JavaScript to view this application.</p>
+        <p>Clear the Closet is a youth-led nonprofit dedicated to amplifying queer voices through storytelling, education, and community support.</p>
       </div>
     </noscript>
     
     <!-- Load React app -->
     <script type="module" src="./src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+    </script>
     
     <!-- Error handler -->
     <script>
@@ -53,6 +117,7 @@
             <h1 style="color: #9370DB;">Error Loading Application</h1>
             <p>There was a problem loading the application. Please check the console for details.</p>
             <pre style="background: #f1f1f1; padding: 10px; border-radius: 4px; overflow: auto;">${e.message}</pre>
+            <p>If the problem persists, please contact support at support@clearthecloset.org</p>
           </div>
         `;
       });

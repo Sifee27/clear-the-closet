@@ -60,7 +60,6 @@ const currentCampaigns = [
 
 const ActionCard = ({ campaign }: { campaign: typeof currentCampaigns[0] }) => (
   <Box
-    bg="white"
     p={6}
     rounded="lg"
     shadow="md"
@@ -133,7 +132,7 @@ export const Action = () => {
               bgGradient="linear(to-r, brand.purple, brand.teal)"
               bgClip="text"
             >
-              [Action Page Title]
+              Take Action Now
             </Heading>
             <Text fontSize="xl" color="gray.600" maxW="2xl" mx="auto">
               [Brief description of why taking action is important and what users can do on this page - 1-2 sentences]
@@ -143,7 +142,7 @@ export const Action = () => {
           {/* Current Campaigns */}
           <Box>
             <Heading size="lg" mb={6}>
-              [Campaigns Section Title]
+              Our Campaigns
             </Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
               {currentCampaigns.map(campaign => (
@@ -155,7 +154,7 @@ export const Action = () => {
           {/* Email Template */}
           <Box bg="brand.lavender" p={8} rounded="lg">
             <Stack spacing={6}>
-              <Heading size="lg">[Email Template Section Title]</Heading>
+              <Heading size="lg">Contact Your Representatives </Heading>
               <Text>
                 [Instructions for using the email template - explain what it's for and how to customize it]
               </Text>
@@ -179,7 +178,7 @@ export const Action = () => {
           {/* How to Be Effective */}
           <Box>
             <Heading size="lg" mb={6}>
-              [Advocacy Tips Section Title]
+              Advocacy Tips
             </Heading>
             <List spacing={4}>
               <ListItem>
@@ -208,7 +207,7 @@ export const Action = () => {
           {/* Newsletter Signup */}
           <Box textAlign="center" bg="brand.pink" p={8} rounded="lg">
             <Stack spacing={4}>
-              <Heading size="lg">[Newsletter Section Title]</Heading>
+              <Heading size="lg">Stay Updated</Heading>
               <Text fontSize="lg">
                 [Brief description of what subscribers will receive and how often]
               </Text>
@@ -220,7 +219,7 @@ export const Action = () => {
                 alignSelf="center"
                 onClick={handleSubscribe}
               >
-                [Subscribe Button Text]
+                Subscribe Now
               </Button>
             </Stack>
           </Box>

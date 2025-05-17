@@ -53,7 +53,6 @@ const storyExamples = [
 const StoryCard = ({ story }: { story: typeof storyExamples[0] }) => (
   <LinkBox
     as="article"
-    bg="white"
     p={6}
     rounded="lg"
     shadow="md"
@@ -126,7 +125,7 @@ export const Voices = () => {
               bgGradient="linear(to-r, brand.purple, brand.teal)"
               bgClip="text"
             >
-              [Stories Page Title]
+              Stories
             </Heading>
             <Text fontSize="xl" color="gray.600" maxW="2xl" mx="auto">
               [Brief description of this section's purpose - whose voices are featured and why they matter]
@@ -181,7 +180,7 @@ export const Voices = () => {
           {/* Submit Story CTA */}
           <Box textAlign="center" bg="brand.pink" p={8} rounded="lg">
             <Heading size="lg" mb={4}>
-              [Call to Action Title]
+              Use Your Voice
             </Heading>
             <Text fontSize="lg" mb={4}>
               [Invitation for users to share their own stories - 1-2 sentences explaining what you're looking for]
@@ -198,7 +197,7 @@ export const Voices = () => {
               fontWeight="bold"
               _hover={{ bg: 'brand.teal' }}
             >
-              [Submit Button Text]
+              Share Your Story
             </LinkBox>
           </Box>
         </Stack>
